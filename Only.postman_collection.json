@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "6f94a123-39e8-47e9-b7db-e17eba735e36",
+		"name": "Test task - Only",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18316114",
+		"_collection_link": "https://brandstoreuz.postman.co/workspace/Designated_deliveries~c1d587b8-d393-4d7b-ab6d-0507bc763271/collection/18316114-6f94a123-39e8-47e9-b7db-e17eba735e36?action=share&source=collection_link&creator=18316114"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin@company.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get available cars",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|56ljMna5sDNEexTxpqyTiIWuc5A4OPchakNSrx9g605f6395",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/available-cars?start_datetime=2025-07-02%2010:00:00&end_datetime=2025-07-02%2015:00:00&sort_by=year&sort_order=desc&per_page=5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"available-cars"
+					],
+					"query": [
+						{
+							"key": "model",
+							"value": "Camry",
+							"disabled": true
+						},
+						{
+							"key": "brand",
+							"value": "Toyota",
+							"disabled": true
+						},
+						{
+							"key": "comfort_category_id",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "comfort_level",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "start_datetime",
+							"value": "2025-07-02%2010:00:00"
+						},
+						{
+							"key": "end_datetime",
+							"value": "2025-07-02%2015:00:00"
+						},
+						{
+							"key": "sort_by",
+							"value": "year"
+						},
+						{
+							"key": "sort_order",
+							"value": "desc"
+						},
+						{
+							"key": "per_page",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
